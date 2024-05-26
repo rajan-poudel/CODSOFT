@@ -4,7 +4,12 @@ import random
 import string
 
 def generate_password():
-    password_length = int(entry_password_length.get())
+    try:
+        password_length = int(entry_password_length.get())
+    except Exception as e:
+        messagebox.showwarning("Warning", "Password length must be a number")
+        return
+    
     if password_length < 8:
         messagebox.showwarning("Warning", "Password length should be at least 8 characters.")
         return
@@ -15,31 +20,24 @@ def generate_password():
     entry_generated_password.insert(tk.END, generated_password)
 
 def accept_password():
-    username = entry_username.get()
     password = entry_generated_password.get()
-    if not username or not password:
-        messagebox.showwarning("Warning", "Please enter a username and generate a password.")
+    if not password:
+        messagebox.showwarning("Warning", "Please generate a password.")
         return
 
-    messagebox.showinfo("Accepted", f"Username: {username}\nPassword: {password}")
+    messagebox.showinfo("Accepted", f"Your Password : {password}")
 
 def reset_fields():
-    entry_username.delete(0, tk.END)
     entry_password_length.delete(0, tk.END)
     entry_generated_password.delete(0, tk.END)
 
 def main():
-    global entry_username, entry_password_length, entry_generated_password
+    global entry_password_length, entry_generated_password
     root = tk.Tk()
     root.title("Rajan's Password Generator")
 
     heading_label = tk.Label(root, text="Rajan's Password Generator", font=("Helvetica", 16, "bold"))
     heading_label.grid(row=0, column=0, columnspan=3, pady=20)
-
-    label_username = tk.Label(root, text="Enter Username:")
-    label_username.grid(row=1, column=0, sticky=tk.E)
-    entry_username = tk.Entry(root, width=30)
-    entry_username.grid(row=1, column=1, columnspan=2)
 
     label_password_length = tk.Label(root, text="Enter Password Length:")
     label_password_length.grid(row=2, column=0, sticky=tk.E)
