@@ -5,7 +5,10 @@ This repository contains my solutions for CODSOFT virtual python internship. (MA
 ![alt text](https://github.com/rajan-poudel/CODSOFT/blob/main/offer_letter.jpeg?raw=true)
 
 # Demo Video
-[![Demo Video](https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_1280.png)](https://raw.githubusercontent.com/rajan-poudel/CODSOFT/main/demo_video.mp4)
+<video controls>
+  <source src="https://raw.githubusercontent.com/rajan-poudel/CODSOFT/main/demo_video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 # About CODSOFT
 CODSOFT is a vibrant and diverse community that brings together individuals with similar objectives and ultimate goals.Our main focus is on creating opportunities that span various areas, including leadership development, learning, student engagement, and fostering shared interests.
